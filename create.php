@@ -156,6 +156,10 @@
          </div>
     </form>
 
+    <div class="flex w-md py-2 mt-5 bg-white/80 justify-center rounded-lg drops-shadow-">
+        <a href="read.php" class="text-teal-950">View Lists</a>
+    </div>
+
     <div class="w-screen h-screen flex flex-col justify-end items-center text-white/70 mb-10">
         <p>Hang Rithy | Uy Sophea | Ol Mengeim | You Muniraksmey</p>
     </div>

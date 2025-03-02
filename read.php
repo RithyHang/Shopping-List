@@ -1,4 +1,12 @@
 <?php
+$successMessage = "";
+if(isset($_GET["success"])){
+    $successMessage = "Student has been updated successfully.";
+}
+?>
+
+
+<?php
     $id;
 
     $db = new mysqli("localhost", "root", "", "db_shopping_list");
@@ -39,6 +47,10 @@
             </div>
         </div>
 
+        <?=
+            $successMessage != "" ? "<div class='success'>$successMessage</div>" : null;
+        ?>
+
         <?php
             echo "<div class = 'row w-7xl text-2xl font-bold bg-white/30 flex self-center px-3 py-5'>";
                 echo "<div class = 'col-2 w-[20%]'> Title </div>";
@@ -65,3 +77,21 @@
     </div>
 </body>
 </html>
+
+<script>
+    let success = document.getElementsByClassName("success");
+    if( success != null ){
+        success[0].style.opacity = 1;
+        success[0].style.transition = "all ease-in-out 1s";
+        setTimeout(
+            function(){
+                success[0].style.opacity = 0;
+                setTimeout(
+                    success[0].remove();
+                ),
+                1000
+            },
+            5000
+        );
+    }
+</script>
